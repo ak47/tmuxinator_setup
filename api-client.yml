@@ -32,7 +32,7 @@ root: ~/Documents/gits/api-client
 
 windows:
   - editor:
-      layout: main-vertical
+      layout: cc90,181x44,0,0{108x44,0,0,7,72x44,109,0,8} # main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after

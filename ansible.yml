@@ -1,7 +1,7 @@
-# ~/.tmuxinator/cm-sftp.yml
+# ~/.tmuxinator/ansible.yml
 
-name: sftp-integration
-root: ~/Documents/gits/sftp-integration
+name: ansible
+root: ~/Documents/gits/ansible
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,16 +28,15 @@ root: ~/Documents/gits/sftp-integration
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t cm-sftp
+# post: tmux -CC attach -t ansible
 
 windows:
   - editor:
-      layout: 0467,181x44,0,0{100x44,0,0,0,80x44,101,0,1}
+      layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
         - vim .
-        - git pull; bundle exec rake db:migrate db:test:prepare
-  - server: bundle exec rails c
-  - logs: tail -f log/development.log
+        - git fetch
+

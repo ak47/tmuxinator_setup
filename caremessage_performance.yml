@@ -1,7 +1,7 @@
-# ~/.tmuxinator/cm-sftp.yml
+# ~/.tmuxinator/caremessage_performance.yml
 
-name: sftp-integration
-root: ~/Documents/gits/sftp-integration
+name: caremessage_performance
+root: ~/Documents/gits/caremessage_performance
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,7 +28,7 @@ root: ~/Documents/gits/sftp-integration
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t cm-sftp
+# post: tmux -CC attach -t caremessage_performance
 
 windows:
   - editor:
@@ -37,7 +37,5 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim .
-        - git pull; bundle exec rake db:migrate db:test:prepare
-  - server: bundle exec rails c
-  - logs: tail -f log/development.log
+        - vim
+        - git fetch; git remote prune origin
